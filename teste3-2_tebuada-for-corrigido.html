@@ -1,0 +1,28 @@
+﻿<html>
+	<head>
+		<script>
+		
+			var limite = 10;
+			var controle = 1;
+			
+			for(i=1; i<=limite; i++){
+			
+				var calculo = i*controle;
+				
+				if(calculo < 10){document.write('0');};
+				
+				document.write(calculo+" - ");
+				controle++;
+				
+				if(controle >= (limite+1)){
+					controle=1;
+					document.write('<br />');
+				}else{
+					i--;
+				}
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

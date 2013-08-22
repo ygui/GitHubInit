@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript">
+		var vetor = [ 31, -41, 59, 26, -53, 58, 97, -93, -23, 84, 1000 ];
+		var soma1 = 0; // Soma atual
+		var somaMaior = 0; // Maior valor
+		var itemIni = 0; // Posição inicial
+		var itemFim =  0; // Posição Final
+		var comeco = false; // Travar posição inicial
+		
+		for(i=0;i<vetor.length;i++){
+			if( soma1 < parseInt( vetor[i] * -1 ) ){
+				soma1 = itemIni = itemFim = 0;
+				comeco = false;
+			}else{
+				soma1 = parseInt(vetor[i] + soma1);
+				if(comeco == false){
+					itemIni = i;
+					comeco = true;
+				}
+			}
+			
+			if(soma1 > somaMaior){
+				somaMaior = soma1;
+				itemFim = i;
+			}
+			
+			console.log( " Vetor[i] = "+parseInt(vetor[i]) +" // soma1 = "+ soma1)
+			
+		}
+		
+		console.log("Do item = "+itemIni+", Até o item = "+itemFim+", o maior valor somado é "+somaMaior);
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

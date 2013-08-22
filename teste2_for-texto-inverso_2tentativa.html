@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<script>
+			var texto = "Mus s u m ipsum cacilds ,.";
+			var textoInverso = '';
+			var palavras = '';
+			var letters = false;
+			
+			//Procura por letras ( i <= ao lenght ) para poder contar após última letra, caso não tenha espaço
+			for(var i=0; i <= texto.length; i++){
+				
+				//Se for uma letra
+				if(texto.charAt(i) != " " && texto.charAt(i) != ""){
+					//indica que é uma palavra q está sendo formada
+					letters = true;
+					//forma a palavra
+					palavras += texto.charAt(i);
+				}else{
+					//se acabou de ser formada uma palavra
+					if(letters == true){
+						//adiciona o texto que já está gravado no final da palavra criada e adiciona um espaço para compensar
+						palavras += " "+textoInverso;
+						//salva a frase nova
+						textoInverso = palavras;
+					}else{
+						//se veio de um espaço, adiciona um espaço
+						textoInverso += " ";
+					}
+					letters = false;
+					palavras = "";
+				}
+			
+			};
+			
+			document.write(""+texto+"<br />");
+			document.write(""+textoInverso+"<br />");
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

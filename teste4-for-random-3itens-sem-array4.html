@@ -1,0 +1,31 @@
+﻿<html>
+	<head>
+		<script>
+			var b = 15;
+			var c = 10;
+			var s = 5;
+			var total = b+c+s;
+			var restantes = 'bcs';
+			
+			for(i=0;i<total;i++){
+				var sorteio = restantes.charAt( Math.floor((Math.random()*restantes.length)) );
+				
+				eval(sorteio + "--");
+				
+				if( eval(sorteio) == 0){
+					novaStr = restantes.substring(0, sorteio) + restantes.substring(sorteio+1);
+					restantes = novaStr;
+				};
+				
+				document.write(""+(i+1)+"-) ");
+				if(sorteio == 'b'){ document.write(" Boné <br />") };
+				if(sorteio == 'c'){ document.write(" Camiseta <br />") };
+				if(sorteio == 's'){ document.write(" Sapato <br />") };
+			
+			}
+			
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

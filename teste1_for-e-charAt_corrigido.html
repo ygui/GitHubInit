@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<script>
+			var texto = "Muss u m      ipsum cacilds ,.";
+			var wordsCount = 0;
+			var letters = false;
+			
+			//Procura por letras
+			for(var i=0; i < texto.length; i++){
+				//Se for uma letra
+				if(texto.charAt(i) != " " && letters == false){
+					//Conta a letra, e trava o contador
+					wordsCount++;
+					letters = true;
+				//Se for um espaço, libera o contador
+				}else{
+					letters = false;
+				}
+			};
+			
+			document.write(""+texto+"<br />");
+			document.write(""+wordsCount+"<br />");
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+﻿<HTML>  
+<HEAD>  
+<TITLE>Linked List </TITLE> 
+</HEAD>  
+  
+<BODY>  
+
+	<SCRIPT>
+		
+		var linkedList1 = [];
+		var limite = 4;
+		var itemAtual = 0;
+		var arrayAtual = 1;
+		
+		function addItens(itens){
+		
+			if(linkedList1.length > 0){
+				itens = linkedList1+","+itens;
+				linkedList1.length = 0;
+				itemAtual = 0;
+				arrayAtual = 1;
+			}
+			
+			var qntNovosItens = itens.split(',');
+			
+			for(i=0;i<qntNovosItens.length; i++){
+				if(itemAtual < limite){
+					eval("linkedList"+arrayAtual+"["+itemAtual+"] = qntNovosItens["+i+"];");
+					itemAtual++;
+				}else{
+					eval("var linkedList"+(arrayAtual+1)+" = []");
+					eval("linkedList"+(arrayAtual+1)+"[0] = qntNovosItens["+i+"]");
+					eval("linkedList"+arrayAtual+"["+itemAtual+"] = linkedList"+(arrayAtual+1));
+					arrayAtual++
+					itemAtual = 1;
+				}
+			}
+			
+			document.write(linkedList1+"<br/>")
+
+		}
+		
+		addItens('primeiro, segundo, 3, 4, 5, sexto, sétimo, 8, 9, 10, onze, doze');
+		
+		addItens('13, 14, 15, dezesseis, dezessete, 18, 19, 20');
+		
+		addItens('vinte e um, 22, 23, 24, 25, 26, 27');
+		
+	</SCRIPT>
+	
+</BODY>
+</HTML>
